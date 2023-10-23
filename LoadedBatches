@@ -50,7 +50,7 @@ Sheets("Produto_Embarcado").Activate
         ElseIf Range("AB1").Value = 1 Or Range("AC1").Value = 1 Then 'Standard for certificate with the Rohs characteristic
         Rows(i).ClearContents
         Sheets("Automate").Activate
-        Range("A" & i).Copy 'Coluna A, linha i
+        Range("A" & i).Copy 'Column A, Row i
         
         Sheets("Produto_Embarcado").Activate
 
@@ -264,7 +264,7 @@ Sheets("Produto_Embarcado").Activate
         ElseIf Range("AY" & max2) = 3 Then 'Dumping pattern for batches = 1, row not equal to 1, cell Y & max2
         Rows(max2).ClearContents
         Sheets("Automate").Activate
-        Range("A" & i).Copy 'Coluna A, linha max2 (i+2)
+        Range("A" & i).Copy 'Column A, Row max2 (i+2)
         Sheets("Produto_Embarcado").Activate
         
             Range("A" & max2).PasteSpecial
