@@ -1,0 +1,199 @@
+Sub comp_quim()
+
+Dim max As Variant
+Dim i As Variant
+Dim max2 As Integer
+
+Sheets("Comp_Quim").Activate
+Columns("A:XFD").Select
+Selection.ClearContents
+
+Sheets("Automate").Activate
+
+max1 = ActiveSheet.Cells(Rows.Count, 1).End(xlUp).Row 'Conta as linhas dos certificados que foram lidos no automate
+
+For i = 1 To max1 * 10 'Max * 10 para resultar em um espaçamento adequado e caber todos os dados
+
+Sheets("Automate").Activate
+Range("C" & i).Copy
+Sheets("Comp_Quim").Activate
+
+    If i = 1 Then 'Linha 1, início do código se difere do restante, loop é único e não duplo.
+    Range("A" & i).PasteSpecial
+    Application.CutCopyMode = False
+    Selection.TextToColumns Destination:=Range("A1") 'Despejo para identificar informação da quantidade dos Lotes
+        
+        If Range("R1").Value = "C" Then
+        
+            Rows(i).ClearContents
+            Sheets("Automate").Activate
+            Range("A" & i).Copy
+            Sheets("Comp_Quim").Activate
+            Sheets("Automate").Activate
+            
+            Range("C" & i).Copy
+            Sheets("Comp_Quim").Select
+            Range("A1").Select
+            ActiveSheet.Paste
+            Application.CutCopyMode = False
+            Application.SendKeys "~"
+            Selection.TextToColumns Destination:=Range("A1"), DataType:=xlFixedWidth, _
+            FieldInfo:=Array(Array(0, 1), Array(5, 1), Array(7, 1), Array(10, 1), Array(12, 1), Array(14, 1), Array(17, 1), Array(20, 1), Array(23, 1), Array(26, 1), Array(29, 1), Array(32, 1), Array(35, 1), Array(37, 1), Array(40, 1), Array(42, 1), Array(45, 1), Array(47, 1), Array(55, 1), _
+                Array(62, 1), Array(69, 1), Array(76, 1), Array(83, 1), Array(90, 1), Array(97, 1), Array(104, 1), Array(111, 1), Array(118, 1), Array(125, 1), Array(132, 1), Array(139, 1), Array(148, 1), Array(155, 1), Array(162, 1), Array(169, 1), Array(177, 1), Array(186, 1), _
+            Array(192, 1), Array(199, 1), Array(206, 1), Array(213, 1), Array(220, 1), Array(227, 1), Array(234, 1), Array(241, 1), Array(248, 1), Array(255, 1), Array(262, 1), Array(269, 1), Array(278, 1), Array(285, 1), Array(292, 1), Array(299, 1), Array(307, 1), Array(316, 1), _
+            Array(322, 1), Array(329, 1), Array(336, 1), Array(343, 1), Array(350, 1), Array(357, 1), Array(364, 1), Array(371, 1), Array(378, 1), Array(385, 1), Array(392, 1), Array(399, 1), Array(408, 1), Array(415, 1), Array(422, 1), Array(429, 1), Array(437, 1), Array(446, 1), _
+            Array(452, 1), Array(459, 1), Array(466, 1), Array(473, 1), Array(480, 1), Array(487, 1), Array(494, 1), Array(501, 1), Array(508, 1), Array(515, 1), Array(522, 1), Array(529, 1), Array(538, 1), Array(545, 1), Array(552, 1), Array(559, 1), Array(567, 1), Array(576, 1)), TrailingMinusNumbers:=True
+              
+            Range("S1:AJ1").Select 'Lote 1
+            Selection.Cut
+            Range("A2").Select
+            ActiveSheet.Paste
+            Range("AK1:BB1").Select 'Lote 2
+            Selection.Cut
+            Range("A3").Select
+            ActiveSheet.Paste
+            Range("BC1:BT1").Select 'Lote 3
+            Selection.Cut
+            Range("A4").Select
+            ActiveSheet.Paste
+            Range("BB1:CL1").Select 'Lote 4
+            Selection.Cut
+            Range("A5").Select
+            ActiveSheet.Paste
+         
+        ElseIf Range("S1") = "C" Then
+        
+            Rows(i).ClearContents
+            Sheets("Automate").Activate
+            Range("C" & i).Copy
+            Sheets("Comp_Quim").Select
+            Range("A1").Select
+            ActiveSheet.Paste
+            
+            Application.CutCopyMode = False
+            Application.SendKeys "~"
+            Selection.TextToColumns Destination:=Range("A1"), DataType:=xlFixedWidth, _
+            FieldInfo:=Array(Array(0, 1), Array(5, 1), Array(7, 1), Array(10, 1), Array(12, 1), Array(14, 1), Array(17, 1), Array(20, 1), Array(23, 1), Array(26, 1), Array(29, 1), Array(32, 1), Array(35, 1), Array(37, 1), Array(40, 1), Array(42, 1), Array(45, 1), Array(47, 1), Array(50, 1), Array(61, 1), _
+                Array(67, 1), Array(74, 1), Array(81, 1), Array(88, 1), Array(95, 1), Array(102, 1), Array(109, 1), Array(116, 1), Array(123, 1), Array(130, 1), Array(137, 1), Array(144, 1), Array(153, 1), Array(160, 1), Array(167, 1), Array(174, 1), Array(181, 1), Array(190, 1), Array(197, 1), _
+            Array(204, 1), Array(211, 1), Array(218, 1), Array(225, 1), Array(232, 1), Array(239, 1), Array(246, 1), Array(253, 1), Array(260, 1), Array(269, 1), Array(276, 1), Array(283, 1), Array(290, 1), Array(297, 1), Array(305, 1), Array(311, 1), Array(318, 1), Array(327, 1), _
+            Array(342, 1), Array(348, 1), Array(355, 1), Array(362, 1), Array(369, 1), Array(376, 1), Array(383, 1), Array(390, 1), Array(397, 1), Array(406, 1), Array(413, 1), Array(420, 1), Array(427, 1), Array(434, 1), Array(442, 1), Array(448, 1), Array(455, 1), Array(464, 1), _
+            Array(478, 1), Array(485, 1), Array(492, 1), Array(499, 1), Array(506, 1), Array(513, 1), Array(520, 1), Array(527, 1), Array(534, 1), Array(541, 1), Array(550, 1), Array(555, 1), Array(564, 1), Array(571, 1), Array(578, 1), Array(675, 1), Array(592, 1), Array(601, 1)), TrailingMinusNumbers:=True
+        
+            Range("T1:AL1").Select 'Lote 1
+            Selection.Cut
+            Range("A2").Select
+            ActiveSheet.Paste
+            Range("AM1:BD1").Select 'Lote 2
+            Selection.Cut
+            Range("A3").Select
+            ActiveSheet.Paste
+            Range("BE1:BV1").Select 'Lote 3
+            Selection.Cut
+            Range("A4").Select
+            ActiveSheet.Paste
+            Range("BC1:CM1").Select 'Lote 4
+            Selection.Cut
+            Range("A5").Select
+            ActiveSheet.Paste
+    End If
+    
+Else
+
+    max2 = ActiveSheet.Cells(Rows.Count, 1).End(xlUp).Row + 3
+    
+    On Error Resume Next
+    
+    Sheets("Automate").Activate
+    Range("C" & i).Copy
+    Sheets("Comp_Quim").Activate
+    Range("A" & max2).PasteSpecial
+    Application.CutCopyMode = False
+    Selection.TextToColumns Destination:=Range("A" & max2)
+        
+    If Range("R" & max2).Value = "C" Then
+            
+        Sheets("Automate").Activate
+        Range("C" & i).Copy
+        Sheets("Comp_Quim").Select
+        Range("A" & max2).Select
+        ActiveSheet.Paste
+        
+        Application.CutCopyMode = False
+        Application.SendKeys "~"
+        Selection.TextToColumns Destination:=Range("A" & max2), DataType:=xlFixedWidth, _
+        FieldInfo:=Array(Array(0, 1), Array(5, 1), Array(7, 1), Array(10, 1), Array(12, 1), Array(14, 1), Array(17, 1), Array(20, 1), Array(23, 1), Array(26, 1), Array(29, 1), Array(32, 1), Array(35, 1), Array(37, 1), Array(40, 1), Array(42, 1), Array(45, 1), Array(47, 1), Array(55, 1), _
+                Array(62, 1), Array(69, 1), Array(76, 1), Array(83, 1), Array(90, 1), Array(97, 1), Array(104, 1), Array(111, 1), Array(118, 1), Array(125, 1), Array(132, 1), Array(139, 1), Array(148, 1), Array(155, 1), Array(162, 1), Array(169, 1), Array(177, 1), Array(186, 1), _
+        Array(192, 1), Array(199, 1), Array(206, 1), Array(213, 1), Array(220, 1), Array(227, 1), Array(234, 1), Array(241, 1), Array(248, 1), Array(255, 1), Array(262, 1), Array(269, 1), Array(278, 1), Array(285, 1), Array(292, 1), Array(299, 1), Array(307, 1), Array(316, 1), _
+        Array(322, 1), Array(329, 1), Array(336, 1), Array(343, 1), Array(350, 1), Array(357, 1), Array(364, 1), Array(371, 1), Array(378, 1), Array(385, 1), Array(392, 1), Array(399, 1), Array(408, 1), Array(415, 1), Array(422, 1), Array(429, 1), Array(437, 1), Array(446, 1), _
+        Array(452, 1), Array(459, 1), Array(466, 1), Array(473, 1), Array(480, 1), Array(487, 1), Array(494, 1), Array(501, 1), Array(508, 1), Array(515, 1), Array(522, 1), Array(529, 1), Array(538, 1), Array(545, 1), Array(552, 1), Array(559, 1), Array(567, 1), Array(576, 1)), TrailingMinusNumbers:=True
+         
+        Range("S" & max2 & ":AJ" & max2).Select 'Lote 1
+        Selection.Cut
+        Range("A" & max2 + 1).Select
+        ActiveSheet.Paste
+        Range("AK" & max2 & ":BB" & max2).Select 'Lote 2
+        Selection.Cut
+        Range("A" & max2 + 2).Select
+        ActiveSheet.Paste
+        Range("BC" & max2 & ":BT" & max2).Select 'Lote 3
+        Selection.Cut
+        Range("A" & max2 + 3).Select
+        ActiveSheet.Paste
+        Range("BU" & max2 & ":CL" & max2).Select 'Lote 4
+        Selection.Cut
+        Range("A" & max2 + 4).Select
+        ActiveSheet.Paste
+            
+    ElseIf Range("S" & max2).Value = "C" Then
+    
+        Sheets("Automate").Activate
+        Range("C" & i).Copy
+        Sheets("Comp_Quim").Select
+        Range("A" & max2).Select
+        ActiveSheet.Paste
+        
+        Application.CutCopyMode = False
+        Application.SendKeys "~"
+        Selection.TextToColumns Destination:=Range("A" & max2), DataType:=xlFixedWidth, _
+        FieldInfo:=Array(Array(0, 1), Array(5, 1), Array(7, 1), Array(10, 1), Array(12, 1), Array(14, 1), Array(17, 1), Array(20, 1), Array(23, 1), Array(26, 1), Array(29, 1), Array(32, 1), Array(35, 1), Array(37, 1), Array(40, 1), Array(42, 1), Array(45, 1), Array(47, 1), Array(50, 1), Array(61, 1), _
+            Array(67, 1), Array(74, 1), Array(81, 1), Array(88, 1), Array(95, 1), Array(102, 1), Array(109, 1), Array(116, 1), Array(123, 1), Array(130, 1), Array(137, 1), Array(144, 1), Array(153, 1), Array(160, 1), Array(167, 1), Array(174, 1), Array(181, 1), Array(190, 1), _
+        Array(198, 1), Array(205, 1), Array(212, 1), Array(219, 1), Array(226, 1), Array(233, 1), Array(240, 1), Array(247, 1), Array(254, 1), Array(261, 1), Array(270, 1), Array(277, 1), Array(284, 1), Array(291, 1), Array(298, 1), Array(306, 1), Array(312, 1), Array(321, 1), _
+        Array(328, 1), Array(342, 1), Array(348, 1), Array(355, 1), Array(362, 1), Array(369, 1), Array(376, 1), Array(383, 1), Array(390, 1), Array(397, 1), Array(406, 1), Array(413, 1), Array(420, 1), Array(427, 1), Array(434, 1), Array(442, 1), Array(448, 1), Array(455, 1), _
+        Array(464, 1), Array(478, 1), Array(485, 1), Array(492, 1), Array(499, 1), Array(506, 1), Array(513, 1), Array(520, 1), Array(527, 1), Array(534, 1), Array(541, 1), Array(550, 1), Array(555, 1), Array(564, 1), Array(571, 1), Array(578, 1), Array(675, 1), Array(592, 1)), TrailingMinusNumbers:=True
+    
+        Range("T" & max2 & ":AL" & max2).Select 'Lote 1
+        Selection.Cut
+        Range("A" & max2 + 1).Select
+        ActiveSheet.Paste
+        Range("AM" & max2 & ":BD" & max2).Select 'Lote 2
+        Selection.Cut
+        Range("A" & max2 + 2).Select
+        ActiveSheet.Paste
+        Range("BE" & max2 & ":BV" & max2).Select 'Lote 3
+        Selection.Cut
+        Range("B" & max2 + 3).Select
+        ActiveSheet.Paste
+        Range("BX" & max2 & ":CM" & max2).Select 'Lote 4
+        Selection.Cut
+        Range("A" & max2 + 4).Select
+        ActiveSheet.Paste
+        
+        End If
+    End If
+    
+    
+    
+Next
+
+Sheets("Comp_Quim").Activate
+ActiveSheet.UsedRange.EntireRow.AutoFit 'Ajusta a altura das linhas
+ActiveSheet.UsedRange.EntireColumn.AutoFit 'Ajusta as larguras das colunas
+Columns("R:S").Select
+    Selection.Replace What:=" ", Replacement:="", LookAt:=xlPart, _
+        SearchOrder:=xlByRows, MatchCase:=False, SearchFormat:=False, _
+        ReplaceFormat:=False, FormulaVersion:=xlReplaceFormula2
+    Selection.Replace What:=Chr(13), Replacement:="", _
+        SearchOrder:=xlByRows, MatchCase:=False, SearchFormat:=False, _
+        ReplaceFormat:=False, FormulaVersion:=xlReplaceFormula2
+
+End Sub
