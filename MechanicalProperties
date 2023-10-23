@@ -12,20 +12,20 @@ Selection.ClearContents
 
 Sheets("Automate").Activate
 
-max1 = ActiveSheet.Cells(Rows.Count, 1).End(xlUp).Row 'Conta as linhas dos certificados que foram lidos no automate
+max1 = ActiveSheet.Cells(Rows.Count, 1).End(xlUp).Row 'Counts the rows of certificates that were read in automate
 
 
-For i = 1 To max1 * 10 'Max * 10 para resultar em um espaçamento adequado e caber todos os dados
+For i = 1 To max1 * 10 'Max * 10 to result in proper spacing and fit all data
 
 Sheets("Automate").Activate
 Range("D" & i).Copy
 Sheets("Prop_Mec").Activate
 
-    If i = 1 Then 'Linha 1, início do código se difere do restante, loop é único e não duplo.
+    If i = 1 Then 'Line 1, beginning of the code differs from the rest, loop is single and not double.
         
     Range("A" & i).PasteSpecial
     Application.CutCopyMode = False
-    Selection.TextToColumns Destination:=Range("A1") 'Despejo para identificar informação da quantidade dos Lotes
+    Selection.TextToColumns Destination:=Range("A1") 'Dump to identify Batches quantity information
         
         If Range("C1").Value = "LE_TR" And Range("H1").Value = "DOBR_180" Then
         
@@ -34,7 +34,7 @@ Sheets("Prop_Mec").Activate
         Range("D" & i).Copy
         Sheets("Prop_Mec").Activate
         
-            Range("A" & i).PasteSpecial 'Colar novamente para Coordenadas com lotes = 1
+            Range("A" & i).PasteSpecial
             Application.SendKeys "~", True
             Application.CutCopyMode = False
             Selection.TextToColumns Destination:=Range("A1"), DataType:=xlFixedWidth, _
@@ -44,19 +44,19 @@ Sheets("Prop_Mec").Activate
             Array(172, 1), Array(179, 1), Array(187, 1), Array(195, 1), Array(200, 1), Array(207, 1), Array(211, 1), Array(213, 1), _
             Array(224, 1), Array(231, 1), Array(239, 1), Array(247, 1), Array(252, 1), Array(259, 1), Array(263, 1), Array(265, 1)), TrailingMinusNumbers:=True
             
-            Range("H1:N1").Select 'Lote 1
+            Range("H1:N1").Select 'Batch 1
             Selection.Cut
             Range("A2").Select
             ActiveSheet.Paste
-            Range("P1:V1").Select 'Lote 2
+            Range("P1:V1").Select 'Batch 2
             Selection.Cut
             Range("A3").Select
             ActiveSheet.Paste
-            Range("W1:AC1").Select 'Lote 3
+            Range("W1:AC1").Select 'Batch 3
             Selection.Cut
             Range("A4").Select
             ActiveSheet.Paste
-            Range("AD1:AH1").Select 'Lote 4
+            Range("AD1:AH1").Select 'Batch 4
             Selection.Cut
             Range("A5").Select
             ActiveSheet.Paste
@@ -68,7 +68,7 @@ Sheets("Prop_Mec").Activate
         Range("D" & i).Copy
         Sheets("Prop_Mec").Activate
         
-            Range("A" & i).PasteSpecial 'Colar novamente para Coordenadas com lotes = 1
+            Range("A" & i).PasteSpecial
             Application.SendKeys "~", True
             Application.CutCopyMode = False
             Selection.TextToColumns Destination:=Range("A1"), DataType:=xlFixedWidth, _
@@ -78,19 +78,19 @@ Sheets("Prop_Mec").Activate
             Array(157, 1), Array(164, 1), Array(172, 1), Array(180, 1), Array(185, 1), Array(192, 1), Array(196, 1), _
             Array(209, 1), Array(213, 1), Array(221, 1), Array(229, 1), Array(234, 1), Array(241, 1), Array(245, 1)), TrailingMinusNumbers:=True
             
-            Range("G1:L1").Select 'Lote 1
+            Range("G1:L1").Select 'Batch 1
             Selection.Cut
             Range("A2").Select
             ActiveSheet.Paste
-            Range("M1:R1").Select 'Lote 2
+            Range("M1:R1").Select 'Batch 2
             Selection.Cut
             Range("A3").Select
             ActiveSheet.Paste
-            Range("S1:X1").Select 'Lote 3
+            Range("S1:X1").Select 'Batch 3
             Selection.Cut
             Range("A4").Select
             ActiveSheet.Paste
-            Range("Y1:AD1").Select 'Lote 4
+            Range("Y1:AD1").Select 'Batch 4
             Selection.Cut
             Range("A5").Select
             ActiveSheet.Paste
@@ -102,7 +102,7 @@ Sheets("Prop_Mec").Activate
         Range("D" & i).Copy
         Sheets("Prop_Mec").Activate
 
-            Range("A" & i).PasteSpecial 'Colar novamente para Coordenadas com lotes = 1
+            Range("A" & i).PasteSpecial
             Application.CutCopyMode = False
             Selection.TextToColumns Destination:=Range("A1"), DataType:=xlFixedWidth, _
             FieldInfo:=Array(Array(0, 1), Array(4, 1), Array(12, 1), Array(19, 1), Array(27, 1), Array(39, 1), _
@@ -111,19 +111,19 @@ Sheets("Prop_Mec").Activate
             Array(155, 1), Array(162, 1), Array(169, 1), Array(172, 1), Array(181, 1), Array(185, 1), _
             Array(207, 1), Array(214, 1), Array(221, 1), Array(224, 1), Array(233, 1), Array(237, 1)), TrailingMinusNumbers:=True
             
-            Range("F1:K1").Select 'Lote 1
+            Range("F1:K1").Select 'Batch 1
             Selection.Cut
             Range("A2").Select
             ActiveSheet.Paste
-            Range("L1:Q1").Select 'Lote 2
+            Range("L1:Q1").Select 'Batch 2
             Selection.Cut
             Range("A3").Select
             ActiveSheet.Paste
-            Range("R1:W1").Select 'Lote 3
+            Range("R1:W1").Select 'Batch 3
             Selection.Cut
             Range("A4").Select
             ActiveSheet.Paste
-            Range("X1:AC1").Select 'Lote 3
+            Range("X1:AC1").Select 'Batch 4
             Selection.Cut
             Range("A5").Select
             ActiveSheet.Paste
@@ -135,7 +135,7 @@ Sheets("Prop_Mec").Activate
         Range("D" & i).Copy
         Sheets("Prop_Mec").Activate
 
-            Range("A" & i).PasteSpecial 'Colar novamente para Coordenadas com lotes = 1
+            Range("A" & i).PasteSpecial
             Application.CutCopyMode = False
             Selection.TextToColumns Destination:=Range("A1"), DataType:=xlFixedWidth, _
             FieldInfo:=Array(Array(0, 1), Array(4, 1), Array(12, 1), Array(19, 1), Array(27, 1), Array(37, 1), Array(50, 1), _
@@ -144,19 +144,19 @@ Sheets("Prop_Mec").Activate
             Array(160, 1), Array(166, 1), Array(173, 1), Array(176, 1), Array(185, 1), Array(197, 1), _
             Array(209, 1), Array(215, 1), Array(222, 1), Array(225, 1), Array(234, 1), Array(246, 1)), TrailingMinusNumbers:=True
             
-            Range("G1:L1").Select 'Lote 1
+            Range("G1:L1").Select 'Batch 1
             Selection.Cut
             Range("A2").Select
             ActiveSheet.Paste
-            Range("M1:R1").Select 'Lote 2
+            Range("M1:R1").Select 'Batch 2
             Selection.Cut
             Range("A3").Select
             ActiveSheet.Paste
-            Range("S1:X1").Select 'Lote 3
+            Range("S1:X1").Select 'Batch 3
             Selection.Cut
             Range("A4").Select
             ActiveSheet.Paste
-            Range("Y1:AD1").Select 'Lote 3
+            Range("Y1:AD1").Select 'Batch 3
             Selection.Cut
             Range("A5").Select
             ActiveSheet.Paste
@@ -165,13 +165,13 @@ Sheets("Prop_Mec").Activate
         
     Else
     
-    max2 = ActiveSheet.Cells(Rows.Count, 1).End(xlUp).Row + 3 'Linhas para i diferente de 1, com "Prop_Mec" ativo antes do looping, ou seja, coleta informações que vieram do automate
-    '+ 3 para pular duas linhas depois do último loop (i)
+    max2 = ActiveSheet.Cells(Rows.Count, 1).End(xlUp).Row + 3 'Count Rows for i <> 1, with "Prop_Mec" active before looping, i.e., collects information that came from automate
+    '+ 3 to skip two lines after the last loop (i)
 
     Range("A" & max2).PasteSpecial
     Application.CutCopyMode = False
     
-    Selection.TextToColumns Destination:=Range("A" & max2) 'Despejo para identificar informação da quantidade dos Lotes
+    Selection.TextToColumns Destination:=Range("A" & max2) 'Dump to identify Lot quantity information
     
     On Error Resume Next
 
@@ -192,19 +192,19 @@ Sheets("Prop_Mec").Activate
             Array(172, 1), Array(179, 1), Array(187, 1), Array(195, 1), Array(200, 1), Array(207, 1), Array(211, 1), Array(213, 1), _
             Array(224, 1), Array(231, 1), Array(239, 1), Array(247, 1), Array(252, 1), Array(259, 1), Array(263, 1), Array(265, 1)), TrailingMinusNumbers:=True
             
-            Range("H" & max2 & ":N" & max2).Select 'Lote 1
+            Range("H" & max2 & ":N" & max2).Select 'Batch 1
             Selection.Cut
             Range("A" & max2 + 1).Select
             ActiveSheet.Paste
-            Range("P" & max2 & ":V" & max2).Select 'Lote 2
+            Range("P" & max2 & ":V" & max2).Select 'Batch 2
             Selection.Cut
             Range("A" & max2 + 2).Select
             ActiveSheet.Paste
-            Range("W" & max2 & ":AC" & max2).Select 'Lote 3
+            Range("W" & max2 & ":AC" & max2).Select 'Batch 3
             Selection.Cut
             Range("A" & max2 + 3).Select
             ActiveSheet.Paste
-            Range("AD" & max2 & ":AH" & max2).Select 'Lote 4
+            Range("AD" & max2 & ":AH" & max2).Select 'Batch 4
             Selection.Cut
             Range("A" & max2 + 4).Select
             ActiveSheet.Paste
@@ -228,19 +228,19 @@ Sheets("Prop_Mec").Activate
             Array(157, 1), Array(164, 1), Array(172, 1), Array(180, 1), Array(185, 1), Array(192, 1), Array(196, 1), _
             Array(209, 1), Array(213, 1), Array(221, 1), Array(229, 1), Array(234, 1), Array(241, 1), Array(245, 1)), TrailingMinusNumbers:=True
             
-            Range("G" & max2 & ":L" & max2).Select 'Lote 1
+            Range("G" & max2 & ":L" & max2).Select 'Batch 1
             Selection.Cut
             Range("A" & max2 + 1).Select
             ActiveSheet.Paste
-            Range("M" & max2 & ":R" & max2).Select 'Lote 2
+            Range("M" & max2 & ":R" & max2).Select 'Batch 2
             Selection.Cut
             Range("A" & max2 + 2).Select
             ActiveSheet.Paste
-            Range("S" & max2 & ":X" & max2).Select 'Lote 3
+            Range("S" & max2 & ":X" & max2).Select 'Batch 3
             Selection.Cut
             Range("A" & max2 + 3).Select
             ActiveSheet.Paste
-            Range("Y" & max2 & ":AD" & max2).Select 'Lote 4
+            Range("Y" & max2 & ":AD" & max2).Select 'Batch 4
             Selection.Cut
             Range("A" & max2 + 4).Select
             ActiveSheet.Paste
@@ -263,19 +263,19 @@ Sheets("Prop_Mec").Activate
             Array(155, 1), Array(162, 1), Array(169, 1), Array(172, 1), Array(181, 1), Array(185, 1), _
             Array(207, 1), Array(214, 1), Array(221, 1), Array(224, 1), Array(233, 1), Array(237, 1)), TrailingMinusNumbers:=True
             
-            Range("F" & max2 & ":K" & max2).Select 'Lote 1
+            Range("F" & max2 & ":K" & max2).Select 'Batch 1
             Selection.Cut
             Range("A" & max2 + 1).Select
             ActiveSheet.Paste
-            Range("L" & max2 & ":Q" & max2).Select 'Lote 2
+            Range("L" & max2 & ":Q" & max2).Select 'Batch 2
             Selection.Cut
             Range("A" & max2 + 2).Select
             ActiveSheet.Paste
-            Range("R" & max2 & ":W" & max2).Select 'Lote 3
+            Range("R" & max2 & ":W" & max2).Select 'Batch 3
             Selection.Cut
             Range("A" & max2 + 3).Select
             ActiveSheet.Paste
-            Range("X" & max2 & ":AC" & max2).Select 'Lote 4
+            Range("X" & max2 & ":AC" & max2).Select 'Batch 4
             Selection.Cut
             Range("A" & max2 + 4).Select
             ActiveSheet.Paste
@@ -298,19 +298,19 @@ Sheets("Prop_Mec").Activate
             Array(160, 1), Array(166, 1), Array(173, 1), Array(176, 1), Array(185, 1), Array(197, 1), _
             Array(209, 1), Array(215, 1), Array(222, 1), Array(225, 1), Array(234, 1), Array(246, 1)), TrailingMinusNumbers:=True
             
-            Range("G" & max2 & ":L" & max2).Select 'Lote 1
+            Range("G" & max2 & ":L" & max2).Select 'Batch 1
             Selection.Cut
             Range("A" & max2 + 1).Select
             ActiveSheet.Paste
-            Range("M" & max2 & ":R" & max2).Select 'Lote 2
+            Range("M" & max2 & ":R" & max2).Select 'Batch 2
             Selection.Cut
             Range("A" & max2 + 2).Select
             ActiveSheet.Paste
-            Range("S" & max2 & ":X" & max2).Select 'Lote 3
+            Range("S" & max2 & ":X" & max2).Select 'Batch 3
             Selection.Cut
             Range("A" & max2 + 3).Select
             ActiveSheet.Paste
-            Range("Y" & max2 & ":AD" & max2).Select 'Lote 4
+            Range("Y" & max2 & ":AD" & max2).Select 'Batch 4
             Selection.Cut
             Range("A" & max2 + 4).Select
             ActiveSheet.Paste
@@ -321,8 +321,8 @@ Sheets("Prop_Mec").Activate
 Next
 
 Sheets("Prop_Mec").Activate
-ActiveSheet.UsedRange.EntireRow.AutoFit 'Ajusta a altura das linhas
-ActiveSheet.UsedRange.EntireColumn.AutoFit 'Ajusta as larguras das colunas
+ActiveSheet.UsedRange.EntireRow.AutoFit 'Firs Rows height
+ActiveSheet.UsedRange.EntireColumn.AutoFit 'Fits Columns lenght
 
 Columns("A:A").Select
 Selection.Insert Shift:=xlToRight
