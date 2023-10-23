@@ -1,0 +1,107 @@
+Excel.LaunchExcel.LaunchAndOpenUnderExistingProcess Path: $'''C:\\Users\\psilva\\Desktop\\CSN_Automate\\Automate.xlsm''' Visible: True ReadOnly: False Instance=> ExcelInstance
+Excel.SetActiveWorksheet.ActivateWorksheetByName Instance: ExcelInstance Name: $'''Automate'''
+SET Pasta TO $'''C:\\Users\\psilva\\Desktop\\CSN_Automate'''
+Folder.GetFiles Folder: Pasta FileFilter: $'''*pdf''' IncludeSubfolders: False FailOnAccessDenied: True SortBy1: Folder.SortBy.NoSort SortDescending1: False SortBy2: Folder.SortBy.NoSort SortDescending2: False SortBy3: Folder.SortBy.NoSort SortDescending3: False Files=> Files
+**REGION Corridas
+LOOP FOREACH pdf IN Files
+    Pdf.ExtractTextFromPDF.ExtractTextFromPageRange PDFFile: pdf FromPageNumber: 1 ToPageNumber: 1 DetectLayout: False ExtractedText=> textopdf
+    Text.ParseText.ParseForFirstOccurrence Text: textopdf TextToFind: $'''Lote Corrida Placa''' StartingPosition: 0 IgnoreCase: False OccurrencePosition=> iniciobloco1
+    Text.ParseText.ParseForFirstOccurrence Text: textopdf TextToFind: $'''Peso Bruto (MT):''' StartingPosition: 0 IgnoreCase: False OccurrencePosition=> fimbloco1
+    SET caracteres TO (fimbloco1 + 25) - iniciobloco1
+    BLOCK 
+ON BLOCK ERROR
+
+END
+        Text.GetSubtext.GetSubtext Text: textopdf CharacterPosition: iniciobloco1 NumberOfChars: caracteres Subtext=> análise
+        IF caracteres = 0 THEN
+            NEXT LOOP
+        END
+    END
+    Excel.GetFirstFreeRowOnColumn Instance: ExcelInstance Column: 1 FirstFreeRowOnColumn=> próximalinha
+    Excel.ActivateCellInExcel.ActivateCell Instance: ExcelInstance Column: 1 Row: próximalinha
+    Excel.WriteToExcel.Write Instance: ExcelInstance Value: análise
+END
+**ENDREGION
+**REGION Aço
+LOOP FOREACH pdf IN Files
+    Pdf.ExtractTextFromPDF.ExtractTextFromPageRange PDFFile: pdf FromPageNumber: 1 ToPageNumber: 1 DetectLayout: False ExtractedText=> textopdf
+    Text.ParseText.ParseForFirstOccurrence Text: textopdf TextToFind: $'''Especificação''' StartingPosition: 0 IgnoreCase: False OccurrencePosition=> iniciobloco1
+    Text.GetSubtext.GetSubtext Text: textopdf CharacterPosition: iniciobloco1 NumberOfChars: 30 Subtext=> análise
+    Excel.GetFirstFreeRowOnColumn Instance: ExcelInstance Column: 2 FirstFreeRowOnColumn=> próximalinha
+    Excel.ActivateCellInExcel.ActivateCell Instance: ExcelInstance Column: 2 Row: próximalinha
+    Excel.WriteToExcel.Write Instance: ExcelInstance Value: análise
+END
+**ENDREGION
+**REGION Composição Química
+LOOP FOREACH pdf IN Files
+    Pdf.ExtractTextFromPDF.ExtractTextFromPageRange PDFFile: pdf FromPageNumber: 1 ToPageNumber: 1 DetectLayout: False ExtractedText=> textopdf
+    Text.ParseText.ParseForFirstOccurrence Text: textopdf TextToFind: $'''Placa C''' StartingPosition: 0 IgnoreCase: False OccurrencePosition=> iniciobloco1
+    Text.ParseText.ParseForFirstOccurrence Text: textopdf TextToFind: $'''----------------------------------------------------------Propriedades''' StartingPosition: 0 IgnoreCase: False OccurrencePosition=> fimbloco1
+    SET caracteres TO fimbloco1 - iniciobloco1
+    BLOCK 
+ON BLOCK ERROR
+
+END
+        Text.GetSubtext.GetSubtext Text: textopdf CharacterPosition: iniciobloco1 NumberOfChars: caracteres Subtext=> análise
+        IF caracteres = 0 THEN
+            NEXT LOOP
+        END
+    END
+    Excel.GetFirstFreeRowOnColumn Instance: ExcelInstance Column: 3 FirstFreeRowOnColumn=> próximalinha
+    Excel.ActivateCellInExcel.ActivateCell Instance: ExcelInstance Column: 3 Row: próximalinha
+    Excel.WriteToExcel.Write Instance: ExcelInstance Value: análise
+END
+**ENDREGION
+**REGION Ensaio de tração
+LOOP FOREACH pdf IN Files
+    Pdf.ExtractTextFromPDF.ExtractTextFromPageRange PDFFile: pdf FromPageNumber: 1 ToPageNumber: 1 DetectLayout: False ExtractedText=> textopdf
+    Text.ParseText.ParseForFirstOccurrence Text: textopdf TextToFind: $'''Lote Corrida''' StartingPosition: 0 IgnoreCase: False OccurrencePosition=> iniciobloco1
+    Text.ParseText.ParseForFirstOccurrence Text: textopdf TextToFind: $'''-------------------------------------------------------------------------- Produto''' StartingPosition: 0 IgnoreCase: False OccurrencePosition=> fimbloco1
+    SET caracteres TO fimbloco1 - iniciobloco1
+    BLOCK 
+ON BLOCK ERROR
+
+END
+        Text.GetSubtext.GetSubtext Text: textopdf CharacterPosition: iniciobloco1 NumberOfChars: caracteres Subtext=> análise
+        IF caracteres = 0 THEN
+            NEXT LOOP
+        END
+    END
+    Excel.GetFirstFreeRowOnColumn Instance: ExcelInstance Column: 4 FirstFreeRowOnColumn=> próximalinha
+    Excel.ActivateCellInExcel.ActivateCell Instance: ExcelInstance Column: 4 Row: próximalinha
+    Excel.WriteToExcel.Write Instance: ExcelInstance Value: análise
+END
+**ENDREGION
+**REGION Tratamento Dos Dados
+BLOCK 
+ON BLOCK ERROR
+    REPEAT ACTION
+END
+    Excel.RunMacro Instance: ExcelInstance Macro: $'''propriedade_mec'''
+    SET prop_mec TO $'''Excel.RunMacro Instance: ExcelInstance Macro: $\'\'\'propriedade_mec\'\'\''''
+END
+WAIT (System.WaitForProcess.ProcessToStop ProcessName: prop_mec)
+BLOCK 
+ON BLOCK ERROR
+    REPEAT ACTION
+END
+    Excel.RunMacro Instance: ExcelInstance Macro: $'''tratar_embarcados'''
+    SET tratar_embarcados TO $'''Excel.RunMacro Instance: ExcelInstance Macro: $\'\'\'tratar_embarcados\'\'\''''
+END
+WAIT (System.WaitForProcess.ProcessToStop ProcessName: tratar_embarcados)
+BLOCK 
+ON BLOCK ERROR
+    REPEAT ACTION
+END
+    Excel.RunMacro Instance: ExcelInstance Macro: $'''comp_quim'''
+    SET composição_quimica TO $'''Excel.RunMacro Instance: ExcelInstance Macro: $\'\'comp_quim\'\''''
+END
+WAIT (System.WaitForProcess.ProcessToStop ProcessName: composição_quimica)
+BLOCK 
+ON BLOCK ERROR
+    REPEAT ACTION
+END
+    Excel.RunMacro Instance: ExcelInstance Macro: $'''Dados_T'''
+    SET Dados_Tratados TO $'''Excel.RunMacro Instance: ExcelInstance Macro: $\'\'\'dados_tratados\'\'\''''
+END
+**ENDREGION
