@@ -10,20 +10,20 @@ Selection.ClearContents
 
 Sheets("Automate").Activate
 
-max1 = ActiveSheet.Cells(Rows.Count, 1).End(xlUp).Row 'Conta as linhas dos certificados que foram lidos no automate
+max1 = ActiveSheet.Cells(Rows.Count, 1).End(xlUp).Row 'Counts the rows of certificates that were read in automate
 
-For i = 1 To max1 * 10 'Max * 10 para resultar em um espaçamento adequado e caber todos os dados
+For i = 1 To max1 * 10 'Max * 10 to result in proper spacing and fit all data
 
 Sheets("Automate").Activate
 Range("C" & i).Copy
 Sheets("Comp_Quim").Activate
 
-    If i = 1 Then 'Linha 1, início do código se difere do restante, loop é único e não duplo.
+    If i = 1 Then 'Line 1, beginning of the code differs from the rest, loop is single and not double.
     Range("A" & i).PasteSpecial
     Application.CutCopyMode = False
-    Selection.TextToColumns Destination:=Range("A1") 'Despejo para identificar informação da quantidade dos Lotes
+    Selection.TextToColumns Destination:=Range("A1") 'Dump to identify Batches quantity information
         
-        If Range("R1").Value = "C" Then
+        If Range("R1").Value = "C" Then 'Pattern to compositions without "Ca" specified, iteration 1
         
             Rows(i).ClearContents
             Sheets("Automate").Activate
@@ -44,24 +44,24 @@ Sheets("Comp_Quim").Activate
             Array(322, 1), Array(329, 1), Array(336, 1), Array(343, 1), Array(350, 1), Array(357, 1), Array(364, 1), Array(371, 1), Array(378, 1), Array(385, 1), Array(392, 1), Array(399, 1), Array(408, 1), Array(415, 1), Array(422, 1), Array(429, 1), Array(437, 1), Array(446, 1), _
             Array(452, 1), Array(459, 1), Array(466, 1), Array(473, 1), Array(480, 1), Array(487, 1), Array(494, 1), Array(501, 1), Array(508, 1), Array(515, 1), Array(522, 1), Array(529, 1), Array(538, 1), Array(545, 1), Array(552, 1), Array(559, 1), Array(567, 1), Array(576, 1)), TrailingMinusNumbers:=True
               
-            Range("S1:AJ1").Select 'Lote 1
+            Range("S1:AJ1").Select 'Batch 1
             Selection.Cut
             Range("A2").Select
             ActiveSheet.Paste
-            Range("AK1:BB1").Select 'Lote 2
+            Range("AK1:BB1").Select 'Batch 2
             Selection.Cut
             Range("A3").Select
             ActiveSheet.Paste
-            Range("BC1:BT1").Select 'Lote 3
+            Range("BC1:BT1").Select 'Batch 3
             Selection.Cut
             Range("A4").Select
             ActiveSheet.Paste
-            Range("BB1:CL1").Select 'Lote 4
+            Range("BB1:CL1").Select 'Batch 4
             Selection.Cut
             Range("A5").Select
             ActiveSheet.Paste
          
-        ElseIf Range("S1") = "C" Then
+        ElseIf Range("S1") = "C" Then 'Pattern to composition with "Ca" specified, iteration 1
         
             Rows(i).ClearContents
             Sheets("Automate").Activate
@@ -79,19 +79,19 @@ Sheets("Comp_Quim").Activate
             Array(342, 1), Array(348, 1), Array(355, 1), Array(362, 1), Array(369, 1), Array(376, 1), Array(383, 1), Array(390, 1), Array(397, 1), Array(406, 1), Array(413, 1), Array(420, 1), Array(427, 1), Array(434, 1), Array(442, 1), Array(448, 1), Array(455, 1), Array(464, 1), _
             Array(478, 1), Array(485, 1), Array(492, 1), Array(499, 1), Array(506, 1), Array(513, 1), Array(520, 1), Array(527, 1), Array(534, 1), Array(541, 1), Array(550, 1), Array(555, 1), Array(564, 1), Array(571, 1), Array(578, 1), Array(675, 1), Array(592, 1), Array(601, 1)), TrailingMinusNumbers:=True
         
-            Range("T1:AL1").Select 'Lote 1
+            Range("T1:AL1").Select 'Batch 1
             Selection.Cut
             Range("A2").Select
             ActiveSheet.Paste
-            Range("AM1:BD1").Select 'Lote 2
+            Range("AM1:BD1").Select 'Batch 2
             Selection.Cut
             Range("A3").Select
             ActiveSheet.Paste
-            Range("BE1:BV1").Select 'Lote 3
+            Range("BE1:BV1").Select 'Batch 3
             Selection.Cut
             Range("A4").Select
             ActiveSheet.Paste
-            Range("BC1:CM1").Select 'Lote 4
+            Range("BC1:CM1").Select 'Batch 4
             Selection.Cut
             Range("A5").Select
             ActiveSheet.Paste
@@ -110,7 +110,7 @@ Else
     Application.CutCopyMode = False
     Selection.TextToColumns Destination:=Range("A" & max2)
         
-    If Range("R" & max2).Value = "C" Then
+    If Range("R" & max2).Value = "C" Then 'Pattern to compositions without "Ca" specified, iteration <> 1
             
         Sheets("Automate").Activate
         Range("C" & i).Copy
@@ -127,24 +127,24 @@ Else
         Array(322, 1), Array(329, 1), Array(336, 1), Array(343, 1), Array(350, 1), Array(357, 1), Array(364, 1), Array(371, 1), Array(378, 1), Array(385, 1), Array(392, 1), Array(399, 1), Array(408, 1), Array(415, 1), Array(422, 1), Array(429, 1), Array(437, 1), Array(446, 1), _
         Array(452, 1), Array(459, 1), Array(466, 1), Array(473, 1), Array(480, 1), Array(487, 1), Array(494, 1), Array(501, 1), Array(508, 1), Array(515, 1), Array(522, 1), Array(529, 1), Array(538, 1), Array(545, 1), Array(552, 1), Array(559, 1), Array(567, 1), Array(576, 1)), TrailingMinusNumbers:=True
          
-        Range("S" & max2 & ":AJ" & max2).Select 'Lote 1
+        Range("S" & max2 & ":AJ" & max2).Select 'Batch 1
         Selection.Cut
         Range("A" & max2 + 1).Select
         ActiveSheet.Paste
-        Range("AK" & max2 & ":BB" & max2).Select 'Lote 2
+        Range("AK" & max2 & ":BB" & max2).Select 'Batch 2
         Selection.Cut
         Range("A" & max2 + 2).Select
         ActiveSheet.Paste
-        Range("BC" & max2 & ":BT" & max2).Select 'Lote 3
+        Range("BC" & max2 & ":BT" & max2).Select 'Batch 3
         Selection.Cut
         Range("A" & max2 + 3).Select
         ActiveSheet.Paste
-        Range("BU" & max2 & ":CL" & max2).Select 'Lote 4
+        Range("BU" & max2 & ":CL" & max2).Select 'Batch 4
         Selection.Cut
         Range("A" & max2 + 4).Select
         ActiveSheet.Paste
             
-    ElseIf Range("S" & max2).Value = "C" Then
+    ElseIf Range("S" & max2).Value = "C" Then 'Pattern to compositions with "Ca" specified, iteration <> 1
     
         Sheets("Automate").Activate
         Range("C" & i).Copy
@@ -181,13 +181,11 @@ Else
         End If
     End If
     
-    
-    
 Next
 
 Sheets("Comp_Quim").Activate
-ActiveSheet.UsedRange.EntireRow.AutoFit 'Ajusta a altura das linhas
-ActiveSheet.UsedRange.EntireColumn.AutoFit 'Ajusta as larguras das colunas
+ActiveSheet.UsedRange.EntireRow.AutoFit 'Fits Rows height
+ActiveSheet.UsedRange.EntireColumn.AutoFit 'Fits columns lenght
 Columns("R:S").Select
     Selection.Replace What:=" ", Replacement:="", LookAt:=xlPart, _
         SearchOrder:=xlByRows, MatchCase:=False, SearchFormat:=False, _
