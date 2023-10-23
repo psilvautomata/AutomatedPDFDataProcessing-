@@ -6,7 +6,9 @@ Dim max As Long
     Sheets("Dados_Tratados").Activate
     
     max = ActiveSheet.Cells(Rows.Count, 1).End(xlUp).Row
-    
+
+'Formulas Insertion
+
     Range("B2").Select
     ActiveCell.FormulaR1C1 = _
         "=IFERROR(IF(XLOOKUP(RC[-1],Produto_Embarcado!C1,Produto_Embarcado!C2)="""","""",(XLOOKUP(RC[-1],Produto_Embarcado!C1,Produto_Embarcado!C2))),"""")"
@@ -67,7 +69,9 @@ Dim max As Long
     Range("U2").Select
     ActiveCell.FormulaR1C1 = _
     "=IFERROR(IF(XLOOKUP(RC[-17],Comp_Quim!C1,Comp_Quim!C[-8])="""","""",(XLOOKUP(RC[-17],Comp_Quim!C1,Comp_Quim!C[-8]))),"""")"
-    
+
+'Table headers
+
     Range("A1").Select
     ActiveCell.FormulaR1C1 = "Lote ID"
     Range("B1").Select
@@ -110,7 +114,9 @@ Dim max As Long
     ActiveCell.FormulaR1C1 = "Mo"
     Range("U1").Select
     ActiveCell.FormulaR1C1 = "N"
-    
+
+'Table colors
+
     Range("A1:U1").Select
     With Selection.Interior
         .Pattern = xlSolid
@@ -123,9 +129,13 @@ Dim max As Long
         .ThemeColor = xlThemeColorDark1
         .TintAndShade = 0
     End With
-    
+
+'Fill formulas
+
     Range("B2:U2").AutoFill Destination:=Range("B2:U" & max), Type:=xlFillDefault
-    
+
+'All Borders
+
     Range("A2:U" & max).Select
     
     Range("A2:U" & max).Borders(xlEdgeTop).LineStyle = xlContinuous
@@ -161,7 +171,7 @@ Dim max As Long
 For w = 2 To max
 
 Sheets("Dados_Tratados").Activate
-    If Range("F" & w).Value = "OK" Then
+    If Range("F" & w).Value = "OK" Then 'If it is "OK", it doesn't refer to mechanical properties, but to hardness.
     Range("E" & w & ":G" & w).ClearContents
     End If
 Next
