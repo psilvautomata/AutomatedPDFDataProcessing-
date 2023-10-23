@@ -11,15 +11,15 @@ Launching Excel: It launches Microsoft Excel and opens a specific Excel file und
 Data Extraction: Extracts data from PDF files, particularly focusing on specific information such as batch numbers, material specifications, chemical compositions, and mechanical properties.
 Data Integration: The extracted data is integrated into an Excel spreadsheet for further analysis and record-keeping.
 
-[DataIntegration](https://drive.google.com/file/id/1rXk1Fd4DPJJOaqX8SRMqX-gAaiXAAB-W)
+[DataIntegration](https://drive.google.com/uc?id=1rXk1Fd4DPJJOaqX8SRMqX-gAaiXAAB-W)
 
-[ChemicalPropertiesTreatment](https://drive.google.com/file/id/17CSJQW6IxkvmyWpsOGefQGqu-tVkPGBx)
+[ChemicalPropertiesTreatment](https://drive.google.com/uc?id=17CSJQW6IxkvmyWpsOGefQGqu-tVkPGBx)
 
-[MechanicalPropertiesTreatment](https://drive.google.com/file/id/16yAGsRI35o_GzZ7-z2vW5bqJ9TiiOT_W)
+[MechanicalPropertiesTreatment](https://drive.google.com/uc?id=16yAGsRI35o_GzZ7-z2vW5bqJ9TiiOT_W)
 
-[Batch](https://drive.google.com/file/id/1_FtWrGj3Gxs5O2DOZMJLXi8igUqz3eiw/view?usp=sharing)
+[Batch](https://drive.google.com/uc?id=1_FtWrGj3Gxs5O2DOZMJLXi8igUqz3eiw/view?usp=sharing)
 
-[FinalSheetWithComposition](https://drive.google.com/file/id/1YGF-9bFxnn8zbo8W_GyNwJFJyiZitca5)
+[FinalSheetWithComposition](https://drive.google.com/uc?id=1YGF-9bFxnn8zbo8W_GyNwJFJyiZitca5)
 
 Key Features:
 
