@@ -10,18 +10,31 @@ The project is focused on several key functions:
 Launching Excel: It launches Microsoft Excel and opens a specific Excel file under an existing process.
 Data Extraction: Extracts data from PDF files, particularly focusing on specific information such as batch numbers, material specifications, chemical compositions, and mechanical properties.
 Data Integration: The extracted data is integrated into an Excel spreadsheet for further analysis and record-keeping.
+
+[DataIntegration](https://drive.google.com/file/id/1rXk1Fd4DPJJOaqX8SRMqX-gAaiXAAB-W/view?usp=sharing)
+
+[ChemicalPropertiesTreatment](https://drive.google.com/file/id/17CSJQW6IxkvmyWpsOGefQGqu-tVkPGBx/view?usp=sharing)
+
+[MechanicalPropertiesTreatment](https://drive.google.com/file/id/16yAGsRI35o_GzZ7-z2vW5bqJ9TiiOT_W/view?usp=sharing)
+
+[Batch](https://drive.google.com/file/id/1_FtWrGj3Gxs5O2DOZMJLXi8igUqz3eiw/view?usp=sharing)
+
+[FinalSheetWithComposition](https://drive.google.com/file/id/1YGF-9bFxnn8zbo8W_GyNwJFJyiZitca5/view?usp=sharing)
+
 Key Features:
 
-Automates the process of data extraction from PDF documents, improving efficiency and accuracy.
-Organizes extracted data within Excel spreadsheets.
-Designed for applications in materials analysis, quality control, and data processing.
+● Automates the process of data extraction from PDF documents, improving efficiency and accuracy.
+● Organizes extracted data within Excel spreadsheets.
+● Designed for applications in materials analysis, quality control, and data processing.
+
 Usage:
 
 To use this tool, follow these steps:
 
-Launch Excel and open the target Excel file using the provided path.
-Extract relevant data from PDF files stored in the specified directory.
-Organize and integrate the extracted data into Excel spreadsheets.
+● Launch Excel and open the target Excel file using the provided path.
+● Extract relevant data from PDF files stored in the specified directory.
+● Organize and integrate the extracted data into Excel spreadsheets.
+
 This repository provides a solution for businesses and individuals looking to automate data processing tasks, particularly in the context of materials analysis and quality control.
 
 
