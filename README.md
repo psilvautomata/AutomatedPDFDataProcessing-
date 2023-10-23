@@ -3,7 +3,7 @@ Project Description:
 
 This repository houses a data automation and processing tool by Microsoft Power Automate flow's designed to streamline the extraction and analysis of data from PDF documents. 
 
-[MSPA_Flow](https://drive.google.com/uc?id=1yIXwyBZd62ai6QvIX-pXnaPVjjw-JGSm)
+[PowerAutomateFlow](https://drive.google.com/uc?id=1yIXwyBZd62ai6QvIX-pXnaPVjjw-JGSm)
 
 The project is focused on several key functions:
 
