@@ -17,7 +17,7 @@ Data Integration: The extracted data is integrated into an Excel spreadsheet for
 
 [MechanicalPropertiesTreatment](https://drive.google.com/uc?id=16yAGsRI35o_GzZ7-z2vW5bqJ9TiiOT_W)
 
-[Batch](https://drive.google.com/uc?id=1_FtWrGj3Gxs5O2DOZMJLXi8igUqz3eiw/view?usp=sharing)
+[Batch](https://drive.google.com/uc?id=1_FtWrGj3Gxs5O2DOZMJLXi8igUqz3eiw)
 
 [FinalSheetWithComposition](https://drive.google.com/uc?id=1YGF-9bFxnn8zbo8W_GyNwJFJyiZitca5)
 
