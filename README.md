@@ -1,4 +1,4 @@
-# AutomatedPDFDataProcessing-
+# AutomatedPDFDataProcessing
 Project Description:
 
 This repository houses a data automation and processing tool by Microsoft Power Automate flow's designed to streamline the extraction and analysis of data from PDF documents. 
