@@ -37,6 +37,6 @@ To use this tool, follow these steps:
 
 This repository provides a solution for businesses and individuals looking to automate data processing tasks, particularly in the context of materials analysis and quality control.
 
-![Automate_PDF_Extraction](https://drive.google.com/uc?id=1Us-fCS5JMoAGuvLoH3st7kRqaUpvzoAb)
+[Video:Automate_PDF_Extraction](https://drive.google.com/uc?id=1Us-fCS5JMoAGuvLoH3st7kRqaUpvzoAb)
 
 
