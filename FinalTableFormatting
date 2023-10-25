@@ -113,7 +113,7 @@ Dim max As Long
     ActiveCell.FormulaR1C1 = "Mo"
     Range("U1").Select
     ActiveCell.FormulaR1C1 = "N"
-    Range("U1").Select
+    Range("V1").Select
     ActiveCell.FormulaR1C1 = "Aço"
     
     Range("A1:V1").Select
