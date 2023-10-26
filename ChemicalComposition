@@ -87,11 +87,11 @@ Sheets("Comp_Quim").Activate
             Selection.Cut
             Range("A3").Select
             ActiveSheet.Paste
-            Range("BF1:BV1").Select 'Batch 3
+            Range("BF1:BX1").Select 'Batch 3
             Selection.Cut
             Range("A4").Select
             ActiveSheet.Paste
-            Range("BX1:CN1").Select 'Batch 4
+            Range("BY1:CQ1").Select 'Batch 4
             Selection.Cut
             Range("A5").Select
             ActiveSheet.Paste
@@ -169,11 +169,11 @@ Else
         Selection.Cut
         Range("A" & max2 + 2).Select
         ActiveSheet.Paste
-        Range("BF" & max2 & ":BV" & max2).Select 'Lote 3
+        Range("BF" & max2 & ":BX" & max2).Select 'Lote 3
         Selection.Cut
         Range("B" & max2 + 3).Select
         ActiveSheet.Paste
-        Range("BX" & max2 & ":CN" & max2).Select 'Lote 4
+        Range("BY" & max2 & ":CQ" & max2).Select 'Lote 4
         Selection.Cut
         Range("A" & max2 + 4).Select
         ActiveSheet.Paste
