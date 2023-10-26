@@ -74,10 +74,10 @@ Sheets("Comp_Quim").Activate
             Application.SendKeys "~"
             Selection.TextToColumns Destination:=Range("A1"), DataType:=xlFixedWidth, _
             FieldInfo:=Array(Array(0, 1), Array(5, 1), Array(7, 1), Array(10, 1), Array(12, 1), Array(14, 1), Array(17, 1), Array(20, 1), Array(23, 1), Array(26, 1), Array(29, 1), Array(32, 1), Array(35, 1), Array(37, 1), Array(40, 1), Array(42, 1), Array(45, 1), Array(47, 1), Array(50, 1), Array(61, 1), _
-                Array(67, 1), Array(74, 1), Array(81, 1), Array(88, 1), Array(95, 1), Array(102, 1), Array(109, 1), Array(116, 1), Array(123, 1), Array(130, 1), Array(137, 1), Array(144, 1), Array(153, 1), Array(160, 1), Array(167, 1), Array(174, 1), Array(181, 1), Array(190, 1), _
-            Array(199, 1), Array(206, 1), Array(213, 1), Array(220, 1), Array(227, 1), Array(234, 1), Array(241, 1), Array(248, 1), Array(255, 1), Array(262, 1), Array(269, 1), Array(276, 1), Array(283, 1), Array(292, 1), Array(299, 1), Array(306, 1), Array(313, 1), Array(320, 1), _
-            Array(329, 1), Array(338, 1), Array(345, 1), Array(352, 1), Array(366, 1), Array(373, 1), Array(380, 1), Array(387, 1), Array(394, 1), Array(401, 1), Array(408, 1), Array(415, 1), Array(422, 1), Array(431, 1), Array(438, 1), Array(445, 1), Array(452, 1), Array(459, 1), _
-            Array(468, 1), Array(470, 1), Array(477, 1), Array(484, 1), Array(498, 1), Array(505, 1), Array(512, 1), Array(519, 1), Array(526, 1), Array(533, 1), Array(540, 1), Array(547, 1), Array(554, 1), Array(563, 1), Array(570, 1), Array(577, 1), Array(584, 1), Array(591, 1)), TrailingMinusNumbers:=True
+                Array(68, 1), Array(75, 1), Array(82, 1), Array(88, 1), Array(96, 1), Array(103, 1), Array(110, 1), Array(117, 1), Array(124, 1), Array(131, 1), Array(138, 1), Array(145, 1), Array(154, 1), Array(161, 1), Array(168, 1), Array(175, 1), Array(182, 1), Array(189, 1), Array(200, 1), _
+            Array(207, 1), Array(214, 1), Array(221, 1), Array(228, 1), Array(235, 1), Array(242, 1), Array(249, 1), Array(256, 1), Array(263, 1), Array(270, 1), Array(277, 1), Array(283, 1), Array(292, 1), Array(300, 1), Array(307, 1), Array(314, 1), Array(321, 1), Array(328, 1), _
+            Array(338, 1), Array(345, 1), Array(352, 1), Array(359, 1), Array(366, 1), Array(373, 1), Array(380, 1), Array(387, 1), Array(394, 1), Array(401, 1), Array(408, 1), Array(412, 1), Array(423, 1), Array(431, 1), Array(438, 1), Array(445, 1), Array(450, 1), Array(462, 1), _
+            Array(470, 1), Array(477, 1), Array(484, 1), Array(491, 1), Array(498, 1), Array(505, 1), Array(512, 1), Array(519, 1), Array(526, 1), Array(533, 1), Array(540, 1), Array(542, 1), Array(555, 1), Array(563, 1), Array(570, 1), Array(577, 1), Array(584, 1)), TrailingMinusNumbers:=True
         
             Range("T1:AL1").Select 'Batch 1
             Selection.Cut
@@ -91,7 +91,7 @@ Sheets("Comp_Quim").Activate
             Selection.Cut
             Range("A4").Select
             ActiveSheet.Paste
-            Range("BY1:CQ1").Select 'Batch 4
+            Range("BZ1:CR1").Select 'Batch 4
             Selection.Cut
             Range("A5").Select
             ActiveSheet.Paste
@@ -156,10 +156,10 @@ Else
         Application.SendKeys "~"
         Selection.TextToColumns Destination:=Range("A" & max2), DataType:=xlFixedWidth, _
         FieldInfo:=Array(Array(0, 1), Array(5, 1), Array(7, 1), Array(10, 1), Array(12, 1), Array(14, 1), Array(17, 1), Array(20, 1), Array(23, 1), Array(26, 1), Array(29, 1), Array(32, 1), Array(35, 1), Array(37, 1), Array(40, 1), Array(42, 1), Array(45, 1), Array(47, 1), Array(50, 1), Array(61, 1), _
-            Array(67, 1), Array(74, 1), Array(81, 1), Array(88, 1), Array(95, 1), Array(102, 1), Array(109, 1), Array(116, 1), Array(123, 1), Array(130, 1), Array(137, 1), Array(144, 1), Array(153, 1), Array(160, 1), Array(167, 1), Array(174, 1), Array(181, 1), Array(190, 1), _
-        Array(199, 1), Array(206, 1), Array(213, 1), Array(220, 1), Array(227, 1), Array(234, 1), Array(241, 1), Array(248, 1), Array(255, 1), Array(262, 1), Array(269, 1), Array(276, 1), Array(283, 1), Array(292, 1), Array(299, 1), Array(306, 1), Array(313, 1), Array(320, 1), _
-        Array(329, 1), Array(338, 1), Array(345, 1), Array(352, 1), Array(366, 1), Array(373, 1), Array(380, 1), Array(387, 1), Array(394, 1), Array(401, 1), Array(408, 1), Array(415, 1), Array(422, 1), Array(431, 1), Array(438, 1), Array(445, 1), Array(452, 1), Array(459, 1), _
-        Array(468, 1), Array(470, 1), Array(477, 1), Array(484, 1), Array(498, 1), Array(505, 1), Array(512, 1), Array(519, 1), Array(526, 1), Array(533, 1), Array(540, 1), Array(547, 1), Array(554, 1), Array(563, 1), Array(570, 1), Array(577, 1), Array(584, 1), Array(591, 1)), TrailingMinusNumbers:=True
+            Array(68, 1), Array(75, 1), Array(82, 1), Array(88, 1), Array(96, 1), Array(103, 1), Array(110, 1), Array(117, 1), Array(124, 1), Array(131, 1), Array(138, 1), Array(145, 1), Array(154, 1), Array(161, 1), Array(168, 1), Array(175, 1), Array(182, 1), Array(189, 1), Array(200, 1), _
+        Array(207, 1), Array(214, 1), Array(221, 1), Array(228, 1), Array(235, 1), Array(242, 1), Array(249, 1), Array(256, 1), Array(263, 1), Array(270, 1), Array(277, 1), Array(283, 1), Array(292, 1), Array(300, 1), Array(307, 1), Array(314, 1), Array(321, 1), Array(328, 1), _
+        Array(338, 1), Array(345, 1), Array(352, 1), Array(359, 1), Array(366, 1), Array(373, 1), Array(380, 1), Array(387, 1), Array(394, 1), Array(401, 1), Array(408, 1), Array(412, 1), Array(423, 1), Array(431, 1), Array(438, 1), Array(445, 1), Array(450, 1), Array(462, 1), _
+        Array(470, 1), Array(477, 1), Array(484, 1), Array(491, 1), Array(498, 1), Array(505, 1), Array(512, 1), Array(519, 1), Array(526, 1), Array(533, 1), Array(540, 1), Array(542, 1), Array(555, 1), Array(563, 1), Array(570, 1), Array(577, 1), Array(584, 1)), TrailingMinusNumbers:=True
     
         Range("T" & max2 & ":AL" & max2).Select 'Lote 1
         Selection.Cut
@@ -173,7 +173,7 @@ Else
         Selection.Cut
         Range("B" & max2 + 3).Select
         ActiveSheet.Paste
-        Range("BY" & max2 & ":CQ" & max2).Select 'Lote 4
+        Range("BZ" & max2 & ":CR" & max2).Select 'Lote 4
         Selection.Cut
         Range("A" & max2 + 4).Select
         ActiveSheet.Paste
