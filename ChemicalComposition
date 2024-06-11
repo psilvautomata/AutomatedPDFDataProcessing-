@@ -187,11 +187,11 @@ Sheets("Comp_Quim").Activate
 ActiveSheet.UsedRange.EntireRow.AutoFit 'Fits Rows height
 ActiveSheet.UsedRange.EntireColumn.AutoFit 'Fits columns lenght
 Columns("R:S").Select
-    Selection.Replace What:=" ", Replacement:="", LookAt:=xlPart, _
-        SearchOrder:=xlByRows, MatchCase:=False, SearchFormat:=False, _
-        ReplaceFormat:=False, FormulaVersion:=xlReplaceFormula2
-    Selection.Replace What:=Chr(13), Replacement:="", _
-        SearchOrder:=xlByRows, MatchCase:=False, SearchFormat:=False, _
-        ReplaceFormat:=False, FormulaVersion:=xlReplaceFormula2
+Selection.Replace What:=" ", Replacement:="", LookAt:=xlPart, _
+SearchOrder:=xlByRows, MatchCase:=False, SearchFormat:=False, _
+ReplaceFormat:=False, FormulaVersion:=xlReplaceFormula2
+Selection.Replace What:=Chr(13), Replacement:="", _
+SearchOrder:=xlByRows, MatchCase:=False, SearchFormat:=False, _
+ReplaceFormat:=False, FormulaVersion:=xlReplaceFormula2
 
 End Sub
