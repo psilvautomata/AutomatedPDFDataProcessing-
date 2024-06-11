@@ -14,20 +14,22 @@ max1 = ActiveSheet.Cells(Rows.Count, 1).End(xlUp).Row 'Counts the rows of certif
 
 For i = 1 To max1 * 10 'Max * 10 to result in proper spacing and fit all data
 
-Sheets("Automate").Activate
-Range("A" & i).Copy
-Sheets("Produto_Embarcado").Activate
+    Sheets("Automate").Activate
+    Range("A" & i).Copy
+    Sheets("Produto_Embarcado").Activate
 
     If i = 1 Then 'Line 1, beginning of the code differs from the rest, loop is single and not double.
-    Range("A" & i).PasteSpecial
-    Application.CutCopyMode = False
-    Selection.TextToColumns Destination:=Range("A1") 'Dump to identify batches quantity information
+
+        Range("A" & i).PasteSpecial
+        Application.CutCopyMode = False
+        Selection.TextToColumns Destination:=Range("A1") 'Dump to identify batches quantity information
 
         If Range("Y1").Value = 1 And Range("F1").Value = "Comprimento" 'Dump pattern for batches = 1 & Comprimento
-        Rows(i).ClearContents
-        Sheets("Automate").Activate
-        Range("A" & i).Copy 'Column A, row i
-        Sheets("Produto_Embarcado").Activate
+
+            Rows(i).ClearContents
+            Sheets("Automate").Activate
+            Range("A" & i).Copy 'Column A, row i
+            Sheets("Produto_Embarcado").Activate
 
             Range("A" & i).PasteSpecial 'Paste again, to Coordinates batches = 1
             Application.SendKeys "~", True 'Sends enter key
@@ -38,7 +40,7 @@ Sheets("Produto_Embarcado").Activate
             Array(80, 1), Array(87, 1), Array(94, 1), Array(103, 1), Array(113, 1), Array(122, 1), Array(131, 1), Array(140, 1), _
             Array(146, 1), Array(154, 1), Array(158, 1), Array(177, 1), Array(184, 1), Array(201, 1), Array(207, 1)), TrailingMinusNumbers:=True
            
-        Range("I1:P1").Select 'Batch 1
+            Range("I1:P1").Select 'Batch 1
             Selection.Cut
             Range("A2").Select 
             ActiveSheet.Paste
@@ -48,10 +50,11 @@ Sheets("Produto_Embarcado").Activate
             ActiveSheet.Paste
 
         ElseIf Range("Y1").Value = 1 And Range("F1").Value = "Comp.Teórico" Then  'Dump pattern for batches = 1 & Comp.Teórico
-        Rows(i).ClearContents
-        Sheets("Automate").Activate
-        Range("A" & i).Copy 'Column A, row i
-        Sheets("Produto_Embarcado").Activate
+
+            Rows(i).ClearContents
+            Sheets("Automate").Activate
+            Range("A" & i).Copy 'Column A, row i
+            Sheets("Produto_Embarcado").Activate
 
             Range("A" & i).PasteSpecial 'Paste again, to Coordinates batches = 11
             Application.SendKeys "~", True 'Sends enter key
@@ -72,11 +75,12 @@ Sheets("Produto_Embarcado").Activate
             ActiveSheet.Paste
             
         ElseIf Range("AB1").Value = 1 Or Range("AC1").Value = 1 Then 'Standard for certificate with the Rohs characteristic
-        Rows(i).ClearContents
-        Sheets("Automate").Activate
-        Range("A" & i).Copy 'Column A, Row i
+
+            Rows(i).ClearContents
+            Sheets("Automate").Activate
+            Range("A" & i).Copy 'Column A, Row i
         
-        Sheets("Produto_Embarcado").Activate
+            Sheets("Produto_Embarcado").Activate
 
             Range("A" & i).PasteSpecial 'Paste again to Coordinates with batches = 1
             Application.SendKeys "~", True 'Sends key Enter
@@ -96,10 +100,11 @@ Sheets("Produto_Embarcado").Activate
             ActiveSheet.Paste
     
         ElseIf Range("AL1").Value = 2 Then 'Dump pattern for batches = 2, cell AL1
-        Rows(i).ClearContents
-        Sheets("Automate").Activate
-        Range("A" & i).Copy
-        Sheets("Produto_Embarcado").Activate
+
+            Rows(i).ClearContents
+            Sheets("Automate").Activate
+            Range("A" & i).Copy
+            Sheets("Produto_Embarcado").Activate
 
             Range("A" & i).PasteSpecial 'Paste again, to Coordinates batches = 2
             Application.SendKeys "~", True
@@ -126,10 +131,11 @@ Sheets("Produto_Embarcado").Activate
             ActiveSheet.Paste
     
         ElseIf Range("Ay1").Value = 3 Then 'Dump pattern for batches = 3, cell AY1
-        Rows(i).ClearContents
-        Sheets("Automate").Activate
-        Range("A" & i).Copy
-        Sheets("Produto_Embarcado").Activate
+
+            Rows(i).ClearContents
+            Sheets("Automate").Activate
+            Range("A" & i).Copy
+            Sheets("Produto_Embarcado").Activate
 
             Range("A" & i).PasteSpecial 'Paste again, to Coordinates batches = 3
             Application.SendKeys "~", True
@@ -159,11 +165,12 @@ Sheets("Produto_Embarcado").Activate
             ActiveSheet.Paste
     
         ElseIf Range("BL1").Value = 4 Then 'Dump pattern for batches = 4, cell BL1
-        Rows(i).ClearContents
-        Application.SendKeys "~", True
-        Sheets("Automate").Activate
-        Range("A" & i).Copy
-        Sheets("Produto_Embarcado").Activate
+
+            Rows(i).ClearContents
+            Application.SendKeys "~", True
+            Sheets("Automate").Activate
+            Range("A" & i).Copy
+            Sheets("Produto_Embarcado").Activate
     
             Range("A" & i).PasteSpecial 'Paste again, to Coordinates batches = 4
             Application.CutCopyMode = False
@@ -196,24 +203,25 @@ Sheets("Produto_Embarcado").Activate
             Range("A6").Select
             ActiveSheet.Paste
     
-            End If
+        End If
     
     Else
     
-    max2 = ActiveSheet.Cells(Rows.Count, 1).End(xlUp).Row + 3 'Lines for i different from 1, with "Produto_Embarcado" active before looping, that is, collects information that came from automate
-    '+ 3 to skip two lines after the last loop (i)
-    Range("A" & max2).PasteSpecial
-    Application.CutCopyMode = False
+        max2 = ActiveSheet.Cells(Rows.Count, 1).End(xlUp).Row + 3 'Lines for i different from 1, with "Produto_Embarcado" active before looping, that is, collects information that came from automate
+        '+ 3 to skip two lines after the last loop (i)
+        Range("A" & max2).PasteSpecial
+        Application.CutCopyMode = False
     
-    Selection.TextToColumns Destination:=Range("A" & max2) 'Dump to identify batches quantity information
+        Selection.TextToColumns Destination:=Range("A" & max2) 'Dump to identify batches quantity information
     
-    On Error Resume Next
+        On Error Resume Next
     
         If Range("Y" & max2).Value = 1 And Range("F" & max2).Value = "Comprimento" Then 'Dumping pattern for batches = 1 & Comprimento, row not equal to 1
-        Rows(max2).ClearContents
-        Sheets("Automate").Activate
-        Range("A" & i).Copy 'Column A, row max2 (i+2)
-        Sheets("Produto_Embarcado").Activate
+
+            Rows(max2).ClearContents
+            Sheets("Automate").Activate
+            Range("A" & i).Copy 'Column A, row max2 (i+2)
+            Sheets("Produto_Embarcado").Activate
         
             Range("A" & max2).PasteSpecial
             Application.SendKeys "~", True
@@ -233,10 +241,11 @@ Sheets("Produto_Embarcado").Activate
             ActiveSheet.Paste
 
         ElseIf Range("Y" & max2).Value = 1 And Range("F" & max2).Value = "Comp.Teórico" Then 'Dumping pattern for batches = 1 & Comp.Teórico, row not equal to 1
-        Rows(max2).ClearContents
-        Sheets("Automate").Activate
-        Range("A" & i).Copy 'Column A, row max2 (i+2)
-        Sheets("Produto_Embarcado").Activate
+
+            Rows(max2).ClearContents
+            Sheets("Automate").Activate
+            Range("A" & i).Copy 'Column A, row max2 (i+2)
+            Sheets("Produto_Embarcado").Activate
         
             Range("A" & max2).PasteSpecial
             Application.SendKeys "~", True
@@ -256,10 +265,11 @@ Sheets("Produto_Embarcado").Activate
             ActiveSheet.Paste
     
         ElseIf Range("AB" & max2).Value = 1 Or Range("AC" & max2).Value = 1 Then 'Dumping pattern to Rohs characteristic
-        Rows(max2).ClearContents
-        Sheets("Automate").Activate
-        Range("A" & i).Copy 'Column A, Row max2 (i+2)
-        Sheets("Produto_Embarcado").Activate
+
+            Rows(max2).ClearContents
+            Sheets("Automate").Activate
+            Range("A" & i).Copy 'Column A, Row max2 (i+2)
+            Sheets("Produto_Embarcado").Activate
         
             Range("A" & max2).PasteSpecial
             Application.SendKeys "~", True
@@ -279,10 +289,11 @@ Sheets("Produto_Embarcado").Activate
             ActiveSheet.Paste
             
         ElseIf Range("AL" & max2) = 2 Then 'Dumping pattern for batches = 1, row not equal to 1, cell Y & max2
-        Rows(max2).ClearContents
-        Sheets("Automate").Activate
-        Range("A" & i).Copy 'Column A, Row max2 (i+2)
-        Sheets("Produto_Embarcado").Activate
+
+            Rows(max2).ClearContents
+            Sheets("Automate").Activate
+            Range("A" & i).Copy 'Column A, Row max2 (i+2)
+            Sheets("Produto_Embarcado").Activate
         
             Range("A" & max2).PasteSpecial
             Application.SendKeys "~", True
@@ -309,10 +320,11 @@ Sheets("Produto_Embarcado").Activate
             ActiveSheet.Paste
         
         ElseIf Range("AY" & max2) = 3 Then 'Dumping pattern for batches = 1, row not equal to 1, cell Y & max2
-        Rows(max2).ClearContents
-        Sheets("Automate").Activate
-        Range("A" & i).Copy 'Column A, Row max2 (i+2)
-        Sheets("Produto_Embarcado").Activate
+
+            Rows(max2).ClearContents
+            Sheets("Automate").Activate
+            Range("A" & i).Copy 'Column A, Row max2 (i+2)
+            Sheets("Produto_Embarcado").Activate
         
             Range("A" & max2).PasteSpecial
             Application.SendKeys "~", True
@@ -342,10 +354,11 @@ Sheets("Produto_Embarcado").Activate
             ActiveSheet.Paste
 
         ElseIf Range("BL" & max2) = 4 Then 'Dumping pattern for batches = 1, row not equal to 1, cell Y & max2
-        Rows(max2).ClearContents
-        Sheets("Automate").Activate
-        Range("A" & i).Copy 'Column A, Row max2 (i+2)
-        Sheets("Produto_Embarcado").Activate
+
+            Rows(max2).ClearContents
+            Sheets("Automate").Activate
+            Range("A" & i).Copy 'Column A, Row max2 (i+2)
+            Sheets("Produto_Embarcado").Activate
 
             Range("A" & max2).PasteSpecial
             Application.SendKeys "~", True
@@ -393,7 +406,6 @@ Selection.Insert Shift:=xlToRight
 Range("A1").Select
 ActiveCell.FormulaR1C1 = "Lote ID"
 Range("A2").Select
-
 
 Application.CutCopyMode = False
 ActiveCell.FormulaR1C1 = "=RC[1]&RC[2]"
