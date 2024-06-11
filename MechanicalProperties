@@ -7,33 +7,31 @@ Dim max2 As Integer
 Sheets("Prop_Mec").Activate
 Columns("A:XFD").Select
 
-
 Selection.ClearContents
 
 Sheets("Automate").Activate
 
 max1 = ActiveSheet.Cells(Rows.Count, 1).End(xlUp).Row 'Counts the rows of certificates that were read in automate
 
-
 For i = 1 To max1 * 10 'Max * 10 to result in proper spacing and fit all data
 
-Sheets("Automate").Activate
-Range("D" & i).Copy
-Sheets("Prop_Mec").Activate
+    Sheets("Automate").Activate
+    Range("D" & i).Copy
+    Sheets("Prop_Mec").Activate
 
     If i = 1 Then 'Line 1, beginning of the code differs from the rest, loop is single and not double.
         
-    Range("A" & i).PasteSpecial
-    Application.CutCopyMode = False
-    Selection.TextToColumns Destination:=Range("A1") 'Dump to identify Batches quantity information
+        Range("A" & i).PasteSpecial
+        Application.CutCopyMode = False
+        Selection.TextToColumns Destination:=Range("A1") 'Dump to identify Batches quantity information
         
         If Range("C1").Value = "LE_TR" And Range("H1").Value = "DOBR_180" Then
         
-        Rows(i).ClearContents
-        Sheets("Automate").Activate
-        Range("D" & i).Copy
-        Sheets("Prop_Mec").Activate
-        
+            Rows(i).ClearContents
+            Sheets("Automate").Activate
+            Range("D" & i).Copy
+            Sheets("Prop_Mec").Activate
+            
             Range("A" & i).PasteSpecial
             Application.SendKeys "~", True
             Application.CutCopyMode = False
@@ -63,10 +61,10 @@ Sheets("Prop_Mec").Activate
             
         ElseIf Range("C1").Value = "LE_TR" Then
         
-        Rows(i).ClearContents
-        Sheets("Automate").Activate
-        Range("D" & i).Copy
-        Sheets("Prop_Mec").Activate
+            Rows(i).ClearContents
+            Sheets("Automate").Activate
+            Range("D" & i).Copy
+            Sheets("Prop_Mec").Activate
         
             Range("A" & i).PasteSpecial
             Application.SendKeys "~", True
@@ -97,10 +95,10 @@ Sheets("Prop_Mec").Activate
             
         ElseIf Range("E1").Value = "Rev" And Range("F1").Value = "Média" Then
         
-        Rows(i).ClearContents
-        Sheets("Automate").Activate
-        Range("D" & i).Copy
-        Sheets("Prop_Mec").Activate
+            Rows(i).ClearContents
+            Sheets("Automate").Activate
+            Range("D" & i).Copy
+            Sheets("Prop_Mec").Activate
 
             Range("A" & i).PasteSpecial
             Application.CutCopyMode = False
@@ -130,10 +128,10 @@ Sheets("Prop_Mec").Activate
             
         ElseIf Range("E1").Value = "Rev" And Range("F1").Value = "Ponto" Then
         
-        Rows(i).ClearContents
-        Sheets("Automate").Activate
-        Range("D" & i).Copy
-        Sheets("Prop_Mec").Activate
+            Rows(i).ClearContents
+            Sheets("Automate").Activate
+            Range("D" & i).Copy
+            Sheets("Prop_Mec").Activate
 
             Range("A" & i).PasteSpecial
             Application.CutCopyMode = False
@@ -165,15 +163,15 @@ Sheets("Prop_Mec").Activate
         
     Else
     
-    max2 = ActiveSheet.Cells(Rows.Count, 1).End(xlUp).Row + 3 'Count Rows for i <> 1, with "Prop_Mec" active before looping, i.e., collects information that came from automate
-    '+ 3 to skip two lines after the last loop (i)
-
-    Range("A" & max2).PasteSpecial
-    Application.CutCopyMode = False
+        max2 = ActiveSheet.Cells(Rows.Count, 1).End(xlUp).Row + 3 'Count Rows for i <> 1, with "Prop_Mec" active before looping, i.e., collects information that came from automate
+        '+ 3 to skip two lines after the last loop (i)
     
-    Selection.TextToColumns Destination:=Range("A" & max2) 'Dump to identify Lot quantity information
-    
-    On Error Resume Next
+        Range("A" & max2).PasteSpecial
+        Application.CutCopyMode = False
+        
+        Selection.TextToColumns Destination:=Range("A" & max2) 'Dump to identify Lot quantity information
+        
+        On Error Resume Next
 
     If Range("C" & max2).Value = "LE_TR" And Range("H" & max2).Value = "DOBR_180" Then
     
@@ -212,11 +210,11 @@ Sheets("Prop_Mec").Activate
             
         ElseIf Range("C" & max2).Value = "LE_TR" Then
         
-        Rows(max2).ClearContents
-        Sheets("Automate").Activate
-        Range("D" & i).Copy
+            Rows(max2).ClearContents
+            Sheets("Automate").Activate
+            Range("D" & i).Copy
         
-        Sheets("Prop_Mec").Activate
+            Sheets("Prop_Mec").Activate
             
             Range("A" & max2).PasteSpecial
             Application.SendKeys "~", True
@@ -247,11 +245,11 @@ Sheets("Prop_Mec").Activate
         
         ElseIf Range("E" & max2).Value = "Rev" And Range("F" & max2).Value = "Média" Then
         
-        Rows(max2).ClearContents
-        
-        Sheets("Automate").Activate
-        Range("D" & i).Copy
-        Sheets("Prop_Mec").Activate
+            Rows(max2).ClearContents
+            
+            Sheets("Automate").Activate
+            Range("D" & i).Copy
+            Sheets("Prop_Mec").Activate
             
             Range("A" & max2).PasteSpecial
             Application.SendKeys "~", True
@@ -282,11 +280,11 @@ Sheets("Prop_Mec").Activate
             
         ElseIf Range("E" & max2).Value = "Rev" And Range("F" & max2).Value = "Ponto" Then
         
-        Rows(max2).ClearContents
-        
-        Sheets("Automate").Activate
-        Range("D" & i).Copy
-        Sheets("Prop_Mec").Activate
+            Rows(max2).ClearContents
+            
+            Sheets("Automate").Activate
+            Range("D" & i).Copy
+            Sheets("Prop_Mec").Activate
             
             Range("A" & max2).PasteSpecial
             Application.SendKeys "~", True
@@ -336,8 +334,8 @@ Selection.AutoFill Destination:=Range("A2:A" & max2)
 Range("A2:A" & max2).Select
 ActiveSheet.UsedRange.EntireColumn.AutoFit
 Selection.Replace What:="%", Replacement:="", LookAt:=xlPart, _
-        SearchOrder:=xlByRows, MatchCase:=False, SearchFormat:=False, _
-        ReplaceFormat:=False, FormulaVersion:=xlReplaceFormula2
+SearchOrder:=xlByRows, MatchCase:=False, SearchFormat:=False, _
+ReplaceFormat:=False, FormulaVersion:=xlReplaceFormula2
 Selection.NumberFormat = "0.00"
 
 Range("A1").Select
