@@ -9,6 +9,7 @@ This repository houses a data automation and processing tool by Microsoft Power 
 
 The project is focused on several key functions:
 <p align="justify">
+  
 _Launching Excel_: It launches Microsoft Excel and opens a specific Excel file under an existing process.
 Data Extraction: Extracts data from PDF files, particularly focusing on specific information such as batch numbers, material specifications, chemical compositions, and mechanical properties.
 Data Integration: The extracted data is integrated into an Excel spreadsheet for further analysis and record-keeping.
