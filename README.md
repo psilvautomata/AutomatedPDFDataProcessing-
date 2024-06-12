@@ -1,6 +1,6 @@
-# AutomatedPDFDataProcessing
+# Automated PDF Data Processing
 
-## Project Description:
+### Project Description:
 <p align="justify">
 This repository houses a data automation and processing tool by Microsoft Power Automate flow's designed to streamline the extraction and analysis of data from PDF documents. 
 </p>
@@ -8,9 +8,9 @@ This repository houses a data automation and processing tool by Microsoft Power 
 [PowerAutomateFlow](https://drive.google.com/uc?id=1yIXwyBZd62ai6QvIX-pXnaPVjjw-JGSm)
 
 The project is focused on several key functions:
-<p align="justify">
-  
-_Launching Excel_: It launches Microsoft Excel and opens a specific Excel file under an existing process.
+
+<p align = "justify">
+    <em>Launching Excel</em>: It launches Microsoft Excel and opens a specific Excel file under an existing process.
 Data Extraction: Extracts data from PDF files, particularly focusing on specific information such as batch numbers, material specifications, chemical compositions, and mechanical properties.
 Data Integration: The extracted data is integrated into an Excel spreadsheet for further analysis and record-keeping.
 </p>
