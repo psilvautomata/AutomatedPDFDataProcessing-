@@ -9,11 +9,13 @@ This repository houses a data automation and processing tool by Microsoft Power 
 
 The project is focused on several key functions:
 
-<p align = "justify">
-    <em>Launching Excel</em>: It launches Microsoft Excel and opens a specific Excel file under an existing process.
-Data Extraction: Extracts data from PDF files, particularly focusing on specific information such as batch numbers, material specifications, chemical compositions, and mechanical properties.
-Data Integration: The extracted data is integrated into an Excel spreadsheet for further analysis and record-keeping.
-</p>
+  <em>Launching Excel</em>: It launches Microsoft Excel and opens a specific Excel file under an existing process.  
+  
+  <p align="justify">
+  <em>Data Extraction</em>: Extracts data from PDF files, particularly focusing on specific information such as batch numbers, material specifications, chemical compositions, and mechanical properties.  
+  </p>
+  
+  <em>Data Integration</em>: The extracted data is integrated into an Excel spreadsheet for further analysis and record-keeping.
 
 [DataIntegration](https://drive.google.com/uc?id=1rXk1Fd4DPJJOaqX8SRMqX-gAaiXAAB-W)
 
