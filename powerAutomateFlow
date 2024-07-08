@@ -1,6 +1,6 @@
-Excel.LaunchExcel.LaunchAndOpenUnderExistingProcess Path: $'''C:\\Users\\psilva\\Desktop\\CSN_Automate\\Automate.xlsm''' Visible: True ReadOnly: False Instance=> ExcelInstance
+Excel.LaunchExcel.LaunchAndOpenUnderExistingProcess Path: $'''C:\\Users\\YourUser\\Desktop\\YourPath\\File.xlsm''' Visible: True ReadOnly: False Instance=> ExcelInstance
 Excel.SetActiveWorksheet.ActivateWorksheetByName Instance: ExcelInstance Name: $'''Automate'''
-SET Pasta TO $'''C:\\Users\\psilva\\Desktop\\CSN_Automate'''
+SET Pasta TO $'''C:\\Users\\YourUser\\Desktop\\YourPath'''
 Folder.GetFiles Folder: Pasta FileFilter: $'''*pdf''' IncludeSubfolders: False FailOnAccessDenied: True SortBy1: Folder.SortBy.NoSort SortDescending1: False SortBy2: Folder.SortBy.NoSort SortDescending2: False SortBy3: Folder.SortBy.NoSort SortDescending3: False Files=> Files
 **REGION Corridas
 LOOP FOREACH pdf IN Files
